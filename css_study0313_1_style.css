@@ -186,3 +186,7 @@ li a {
 .text_box {
   display: inline-block;
 }
+
+footer {
+  margin-left: 30px;
+}
