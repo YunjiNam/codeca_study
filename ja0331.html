@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        //Codecademy Javascript ch.2 Conditionals project 1
+        let userName = '';
+        userName ? console.log('true') : console.log('false');
+        if (userName) {
+          console.log('Hello, ' + userName +'!');
+        } else {
+          console.log('Hello!');
+        }
+
+        let userQuestion = 'will I go to a cafe tomorrow?';
+        console.log(`The user asked: ${userQuestion}`);
+
+        const randomNumber = Math.floor(Math.random() * 8);
+
+        let eightBall = '';
+
+        switch (randomNumber) {
+          case 0 :
+            eightBall = 'It is certain';
+            break;
+          case 1 :
+            eightBall = 'It is decidedly so';
+            break;
+          case 2 :
+            eightBall = 'Reply haze try again';
+            break;
+          case 3 :
+            eightBall = 'Cannot predict now';
+            break;
+          case 4 :
+            eightBall = 'Do not count on it';
+            break;
+          case 5 :
+            eightBall = 'My sources say no';
+            break;
+          case 6 :
+            eightBall = 'Outlook not so good';
+            break;
+          case '7' :
+            eightBall = 'Signs point to yes';
+            break;
+        }
+        console.log(`The eight ball answered: ${eightBall}`);
+        
+        //Codecademy Javascript ch.2 Conditionals project 2
+        let raceNumber = Math.floor(Math.random() * 1000);
+        let registeredEarly = true;
+        let runnerAge = 18;
+        if (registeredEarly && runnerAge > 18) {
+          console.log(raceNumber += 1000);
+        }
+        if (registeredEarly && runnerAge > 18) {
+          console.log(raceNumber, 'race at 9:30 am');
+        } else if (!registeredEarly && runnerAge > 18) {
+          console.log(raceNumber += 1000, "Late adults run at 11:00 am");
+        } else if(runnerAge < 18) {
+          console.log(raceNumber, "Youth registrants run at 12:30 pm(regardless of registration)");
+        } else {
+          console.log("go to registration desk");
+        }
+    </script>
+</body>
+</html>
