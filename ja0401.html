@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        
+        //컴퓨터랑 가위, 바위, 보 게임하기
+        const getUserChoice = (userInput) => {
+          userInput = userInput.toLowerCase();
+          if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
+            return userInput;
+          } else {
+            console.log('Error!');
+          }
+        }
+        // console.log(getUserChoice('SCIssors'));
+
+        function getComputerChoice() {
+          let comInput = Math.floor(Math.random() * 3);
+          switch (comInput) {
+            case 0:
+              return 'rock';
+              break;
+            case 1:
+              return 'scissors';
+              break;
+            default:
+              return 'paper';
+              break;
+          }
+        }
+        // console.log(getComputerChoice());
+
+        function determineWinner(userChoice, computerChoice) {
+          if (userChoice === 'bomb') {
+            return 'You win!';
+          }
+          if (userChoice === computerChoice) {
+            return 'The game is a tie!';
+          }
+          if (userChoice === 'rock') {
+            if (computerChoice === 'paper') {
+              return 'The computer won!';
+            } else {
+              return 'You won!';
+            }
+          }
+          if (userChoice === 'paper') {
+            if (computerChoice === 'scissors') {
+              return 'The computer won!';
+            } else {
+              return 'You won!';
+            }
+          }
+          if (userChoice === 'scissors') {
+            if (computerChoice === 'rock') {
+              return 'The computer won!';
+            } else {
+              return 'You won!';
+            }
+          }
+        }
+
+        // console.log(determineWinner('paper', 'scissors'));
+        // console.log(determineWinner('paper', 'paper'));
+        // console.log(determineWinner('paper', 'rock'));
+
+        function playGame() {
+          let userChoice = getUserChoice('bomb');
+          let computerChoice = getComputerChoice();
+          console.log('You threw: ' + userChoice);
+          console.log('The computer threw: ' + computerChoice);
+          console.log(determineWinner(userChoice,computerChoice));
+        }
+        playGame();
+        
+        
+        // 수면 시간 계산기
+        
+        const getSleepHours = day => {
+          switch (day) {
+            case 'monday':
+              return 8;
+              break;
+            case 'tuesday':
+              return 7;
+              break;
+            case 'wednesday':
+              return 9;
+              break;
+            case 'thursday':
+              return 5;
+              break;
+            case 'friday':
+              return 6;
+              break;
+            case 'saterday':
+              return 5;
+              break;
+            default:
+              return 3;
+              break;
+          }
+        };
+        console.log(getSleepHours('sunday'));
+
+        const getActualSleepHours = () => getSleepHours('monday') + getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') + getSleepHours('friday') + getSleepHours('saterday') + getSleepHours('sunday');
+
+        const getIdealSleepHours = () => {
+          const idealHours = 9;
+          return idealHours * 7;
+        }
+
+        console.log(getActualSleepHours());
+        console.log(getIdealSleepHours());
+
+        const calculateSleepDebt = () => {
+          const actualSleepHours = getActualSleepHours();
+          const idealSleepHours = getIdealSleepHours();
+          if (actualSleepHours === idealSleepHours) {
+            console.log('You got the perfect amount of sleep!');
+          } else if (actualSleepHours > idealSleepHours) {
+            console.log('You got more sleep than needed.');
+          } else {
+            console.log('You got ' + (idealSleepHours - actualSleepHours) + ' hour(s) less sleep than you needed this week. Get some rest.');
+          }
+        }
+        calculateSleepDebt();
+
+
+
+    </script>
+    </body>
+</html>
+
+
+
+
+
+
+
